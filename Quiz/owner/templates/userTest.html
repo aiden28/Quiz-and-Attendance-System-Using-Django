@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test </title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+
+  <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/addons/p5.sound.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <style>
+    body{
+      --webkit-user-select: none;
+      -webkit-touch-callout: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+  	.fullB{
+  		margin: 20% 40% auto;
+  		position: absolute;
+      z-index: 100;
+
+  	 }
+  	 .full{
+  	 	width: 140px;
+  	 	height: 80px;
+  	 	font-size: 50px;
+
+  	 }
+  	 .blur{
+  	 	filter:blur(4px);
+  	 }
+  	 .dis{
+  	 	display: none;
+  	 }
+
+
+  </style>
+</head>
+<body  style="background-color: #ffffe6;">
+
+	 <div class=" fullB" id="fullB">
+	 		<button id="fs-doc-button">FULLSCREEN</button>
+
+	 </div>
+	 <div class="fullpage blur" id="body">
+	 <div class="container  ">
+       <div class="row1" style="margin-top: 35px;">
+         <div class="row" >
+
+            <div class="col-sm-10" >
+                   <h2 align="center" id="italic" style="font-family:italic;">Intellectual Quiz</h2>
+
+            </div>
+
+           <div class="col-sm-2">
+
+               <p id="timer" style="text-align:center;border-radius: 25px;background: #415c63;color: white;padding: 20px;width: 100px;height: 50px; font-size: 23px; line-height: 12px">{{t}}:00 </p><!---featch from database-->
+           </div>
+        </div>
+        </div>
+
+        <div class="row2" >
+           <div class="row" >
+
+            <div class="col-sm-0 col-md-0 col-lg-12 col-xl-12">
+
+
+              <form name="myform" id="myForm" action="../testResult/" method="post">
+                          {% csrf_token %}
+
+
+              {% for i,id,q,a,b,c,d in data %}
+
+                <div class="questiondiv">
+                    <input type="hidden" name="que{{i}}" value="{{id}}" >
+                    <span class="queno">Que#{{i}}</span>
+                    <span class="question">{{q}}</span><br>
+                    <input type="radio" class="option" name="option{{i}}" value="{{a}}">
+                    <span class="options">(a) {{a}}</span><br>
+                    <input type="radio" class="option" name="option{{i}}" value="{{b}}">
+                    <span class="options">(b) {{b}}</span><br>
+                    <input type="radio" class="option" name="option{{i}}" value="{{c}}">
+                    <span class="options">(c) {{c}}</span><br>
+                    <input type="radio" class="option" name="option{{i}}" value="{{d}}">
+                    <span class="options">(d) {{d}}</span><br>
+                </div>
+
+                         {% endfor %}
+              <input type="hidden" name="x" value="{{n}}">
+
+              <input type="hidden" name="paperId" value="{{paperId}}">
+
+              <input type="submit" class="btn btn-primary" style="float: left; margin-top: 20px" value="submit" onclick="return confirm('Are you sure you want to submit quiz?')">
+                  </form>
+
+
+
+               </div>
+
+          </div>
+
+        </div>
+
+
+    </div>
+
+	 </div>
+
+
+<script>
+
+  var x =document.getElementById("timer").innerHTML;
+  console.log("x"+x);
+  var b = parseInt(x);
+  var timeleft = b*60;//changed
+  console.log("b"+b);
+
+var startTime = 0;
+var currentTime = 0;
+
+function convertSeconds(s) {
+  var min = floor(s / 60);
+  var sec = s % 60;
+  return nf(min, 2) + ':' + nf(sec, 2);
+}
+
+function setup() {
+  noCanvas();
+  startTime = millis();
+
+  var timer = select('#timer');
+      //console.log(timer);
+
+  timer.html(convertSeconds(timeleft - currentTime));
+
+  var interval = setInterval(timeIt, 1000);
+
+  function timeIt() {
+
+    currentTime = floor((millis() - startTime) / 1000);
+    timer.html(convertSeconds(timeleft - currentTime));
+    if (currentTime == timeleft) {
+      ding.play();
+      clearInterval(interval);
+      //counter = 0;
+    }
+  }
+}
+
+
+
+//for auto submit
+ function submitform()
+    {
+      //alert('test');
+      document.myForm.submit();
+    }
+ var auto_refresh = setInterval(
+    function()
+    {
+     document.getElementById("myForm").submit();
+    }, b*60*1000); //changed
+
+
+
+
+   var count=1
+
+	var requestFullscreen = function(ele) {
+		console.log(ele);
+		var element = document.getElementById("body");
+		var element2 = document.getElementById("fullB");
+		console.log("e2"+ element2);
+
+
+
+    if (ele.requestFullscreen) {
+        ele.requestFullscreen();
+        element.classList.remove("blur");
+        element2.classList.add("dis");
+    } else if (ele.webkitRequestFullscreen) {
+        ele.webkitRequestFullscreen();
+        element.classList.remove("blur");
+        element2.classList.add("dis");
+    } else if (ele.mozRequestFullScreen) {
+        ele.mozRequestFullScreen();
+        element.classList.remove("blur");
+        element2.classList.add("dis");
+    } else if (ele.msRequestFullscreen) {
+        ele.msRequestFullscreen();
+        element.classList.remove("blur");
+        element2.classList.add("dis");
+    } else {
+        console.log('Fullscreen API is not supported.');
+    }
+};
+
+console.log("browser is fullscreen4");
+
+var fsDocButton = document.getElementById('fs-doc-button');
+
+
+fsDocButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    requestFullscreen(document.documentElement);
+});
+console.log("browser is fullscreen3");
+
+function myFunction1() {
+	console.log("count"+count);
+  setInterval(function(){
+   if( window.innerHeight == screen.height) {
+    // browser is fullscreen
+
+    console.log("browser is fullscreen");
+
+}
+else if(count>=3)
+{
+	  document.getElementById("myForm").submit();
+		console.log(count);
+		alert("Test has been submitted autometically");
+}
+else{
+	count=count +1;
+
+	console.log("browser is not fullscreen");
+
+	var element = document.getElementById("body");
+		var element2 = document.getElementById("fullB");
+
+        element.classList.add("blur");
+        element2.classList.remove("dis");
+}
+}, 3000);
+}
+
+myFunction1()
+
+
+
+
+</script>
+</body>
+</html>

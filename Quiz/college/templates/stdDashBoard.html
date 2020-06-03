@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>student dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+		*,h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.fit-image{
+width: 100%;
+object-fit: cover;
+ height: 200px;
+}
+.col-lg-3{
+
+	text-align: center;
+	margin-top: 15px;
+}
+nav{
+	background-color: #00b33c;
+	height: 100px;
+	margin-top: -20px;
+
+}
+
+a{
+	color: blue;
+	text-decoration: none;
+
+}
+.dash{
+	font-size: 40px;
+	padding: 15px;
+	float: left;
+
+}
+.log a{
+	color: black;
+	font-size: 30px;
+	padding: 15px;
+	float: right;
+	text-decoration: none;
+}
+.dropdown-menu{
+	margin-left: 5%;
+}
+@media screen and (min-width: 300px) and (max-width: 540px) {
+  .fit-image{
+
+ height: 150px;
+ width: 150px;
+  }
+  @media screen and (min-width: 300px) and (max-width: 400px) {
+  .dash{
+	font-size: 40px;
+
+
+}
+.log a{
+
+	font-size: 40px;
+
+}
+}
+
+	</style>
+</head>
+<body>
+	<nav>
+		<h1 class="dash"> Dashboard</h1>
+		<h3 class="log"><a href="{% url 'stdLogout' %}"> Logout</a></h3>
+	</nav>
+	<section>
+
+		<div class="container">
+  <div class="row">
+    <div class=" col-12 col-sm-6 col-md-6 col-lg-3 ">
+         <div class="dropdown dropright">
+    <a class="btn  dropdown-toggle" href="" data-toggle="dropdown">
+    	<img src="{% static 'images/4313result2.jpg' %}" alt="" class="fit-image">
+
+    <span class="caret"> </span>
+    <br><h3>Result</h3>
+
+</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Quiz Result</a></li>
+      <li><a href="#">Subject Result</a></li>
+
+    </ul>
+
+  </div>
+   </div>
+
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+      <a href="{% url 'user' %}" class="btn btn-light">
+      	<img src="{% static 'images/attdance.png' %}" alt="" class="fit-image">
+      	<h3>Quiz</h3>
+      </a>
+
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+      <a href="{% url 'viewStdAttend' %}" class="btn btn-light">
+      	<img src="{% static 'images/group chat.jpg' %}" alt="" class="fit-image">
+      	 <h3>View Attedance</h3>
+      </a>
+
+    </div>
+     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+         <a href="{% url 'payFee1' %}">
+      	<img src="{% static 'images/fee.jpg' %}" alt="" class="fit-image">
+      	<h3>Pay Fee</h3>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+	</section>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,537 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Colege</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato&amp;subset=latin,latin-ext'>
+<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .school-img{
+      float: left;
+      margin: 20px;
+    }
+    marquee{
+      height: 250px;
+      max-width: 500px;
+    }
+    @media screen and (min-width: 350px)and (max-width:600px ){
+      .school-img{
+        width: 300px;
+      }
+      marquee{
+      height: 200px;
+    }
+    }
+    @media screen and (min-width: 601px)and (max-width:800px ){
+
+      marquee{
+      height: 200px;
+      margin-left: 10%;
+    }
+    }
+    @media screen and (min-width: 801px)and (max-width:1200px ){
+
+      marquee{
+      height: 200px;
+      margin-left: 25%;
+    }
+    }
+    /*Google fonts
+==============================*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+/*Body
+==============================*/
+body{
+    overflow-x: hidden;
+    width: 100%;
+    font-family: arimo;
+    color: #6c6c6c;
+    font-size: 14px;
+}
+p
+{
+    color: #fff;
+    font-family: 'oswald', sans-serif;
+}
+#service-provide{
+    padding: 80px 0;
+    color: #333;
+}
+#service-provide h2{
+    color: #333;
+}
+
+.col-pic{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    padding-top: 6.5em;
+    background: rgba(0, 0, 0, 0.43);
+
+
+}
+.col-pic p{
+    color:#fff;
+    font-size:1.1em;
+    text-transform:uppercase;
+    font-family: 'Oxygen-Bold';
+}
+.col-pic h5{
+    color:#fff;
+    font-size: 20px;
+    text-transform:uppercase;
+     font-family: 'roboto slab', sans-serif;
+    letter-spacing: 0.25px;
+}
+.col-pic label{
+    width:100px;
+    height:2px;
+    display:block;
+    background:#fff;
+    border-radius:10px;
+    margin: 0.5em auto;
+}
+
+.col-3{
+    position:relative;
+    margin-bottom:1.5em;
+    z-index: 0;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 2.2s ease-in-out;
+    -moz-transition: all 2.2s ease-in-out;
+    -ms-transition: all 2.2s ease-in-out;
+    -o-transition: all 2.2s ease-in-out;
+    transition: all 2.2s ease-in-out;
+
+}
+.col-3 a img
+{
+    -webkit-transition: all 2.4s ease-in-out;
+    -moz-transition: all 2.4s ease-in-out;
+    -ms-transition: all 2.4s ease-in-out;
+    -o-transition: all 2.4s ease-in-out;
+    transition: all 2.4s ease-in-out;
+    height:320px;
+    width:100%;
+
+}
+
+.col-3 a
+{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.col-3 a:hover img
+{
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+.col-3:hover .col-pic
+{
+    background:rgba(0, 0, 0, 0.59);
+}
+
+.padcol {
+    padding-left:1px;
+    padding-right:2px;
+    margin-top: -17px;
+}
+.margright
+{
+    margin-right: -2px;
+}
+
+
+    </style>
+</head>
+<body>
+
+<div class="container-fluid1 main1 ">
+
+
+<div class="example3">
+  <nav class="navbar navbar-inverse navbar-static-top"  style=" background-color: teal; width: 100%;>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=""><img src="{% static 'images/collagelogo.png' %}" alt="Dispute Bills">
+        </a>
+      </div>
+      <div id="navbar3" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active1"><a href="#">Home</a></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Teachers<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{% url 'registration' %}">Registration</a></li>
+              <li><a href="{% url 'login' %}">Log in</a></li>
+       </ul>
+</li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Student <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="{% url 'signup1' %}">Registration</a></li>
+                <li><a href="{% url 'stdLogin' %}">Login</a></li>
+
+              <li><a href="#">Admission</a></li>
+              <li><a href="{% url 'payFee1' %}">Pay Fee</a></li>
+
+              <li class="divider"></li>
+
+              <li><a href="#">Doubt Fourm</a></li>
+              <li><a href="#">Exam Notice</a></li>
+            </ul>
+               <li><a href="#footer1">About</a></li>
+               <li><a href="#Contact">Contact</a></li>
+               <li><a href="http://127.0.0.1:8000/admin/">Administration Login</a></li>
+
+
+
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+</div>
+
+</div>
+<div class="slider">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static 'images/1.jpg' %}" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/2.jpg' %}" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/3.jpg' %}" alt="New York">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+
+
+<!-- Principal -->
+<div class="Principal">
+  .<div class="container">
+    <div class="row">
+          <div class="col-sm-12 col-lg-3 col-md-4 col-xl-3 pri">
+         <img src="{% static 'images/pri.jpg' %}" alt="" id="priPhoto">
+         <h3>Dr.V.Rajendran</h3>
+       </div>
+
+      <div class="col-sm-12 col-lg-9 col-md-8 col-xl-9 priM">
+        <h1>Message from the Principal</h1>
+       <blockquote cite="">
+                 Education is a shared commitment between dedicated teachers, motivated students and enthusiastic parents with high expectations. The role of a school is not only to pursue academic excellence but also to motivate and empower its students to be lifelong learners, critical thinkers and productive members of a dynamic global society.
+The school that is being run under the well-established management of "Indian Education Society" has earned its name and fame by imparting excellent education for more than 40 years. At our group of institutions, we provide an atmosphere for multifaceted development where children are encouraged to channelize their potential in the pursuit of excellence.
+                <br><br>
+
+        Dr.V.Rajendran<br>
+        Principal
+           </blockquote>
+
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<br><br>
+<!------------------Notification section start---------------->
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-8 col-md-12">
+      <img src="{% static 'images/school-img.jpg' %}" alt="asd" class="school-img">
+      <h2 class="school-message-heading" style="text-align: center; margin-top: 15px;"> Welcome to DPS </h2>
+     <p class="school-message" style="justify-content: space-between; color: black;">  Delhi Public School, Bareilly has covered a momentous journey of 19 years, and has covered a sea of achievements during it. The milestone that has been achieved has led to the school being acclaimed as one of the best CBSE schools and under the mentorship of the Principal, Mrs. Archana Nigam the school has reached the pinnacle of excellence. Academics, Arts, Music, Sports, Quiz, Debates, and Dramatics etc. are the areas in which the rich potential of talents are seen in abundance with the school touching the heights of recognition by winning accolades and getting kudos. The healthy environment and modern infrastructure reinstates the opinion that DPS Kalyanpur is poised for the ultimate excellence and name.</p>
+
+
+
+    </div>
+    <div class="col-sm col-lg-4 col-md-12"><h2 style="text-align: center;">News and Event</h2>
+    <marquee direction="up" behavior="alternate"  scrollamount="1" >
+  <ul style=" margin: 20px; padding: 15px;">
+  <li><strong>[Classes PG-IV]</strong><br>
+
+Dear Parents,<br>
+Kindly read Tuesday September 10th, 2019 for Muharram Holiday instead of Wednesday September 11th, 2019 given in the school almanac.
+The school will remain functional on Wednesday 11th September, 2019.
+new redDear Parents,
+The school timings for Teacher’s day on thursday 5th Sept’19 will be 9:00 am – 12:00 noon.
+Students can wear casuals.
+Buses will ply.<br>
+DPS Bareilly
+</li>
+  <li><strong>[Classes IX-XII] </strong><br> Dear Parents, <br>This is to inform you that the PTM for classes IX-XII will be held on Saturday, 25th May, 2019. <br>Timings:      9.00 am to 10.30 am Kindly adhere to given time slot.
+</li>
+  <li> <strong> [Classes III-VIII]</strong><br> Dear Parents,<br> This is to inform you that the PTM for classes III-VIII will be held on Saturday,11th May,2019.Timings for:- Classes III-V :-9:00 am - 10:00 amClasses VI-VIII:- 10:30 am.- 11:30 am.Kindly adhere to the given time slot.</li>
+
+
+</ul>
+
+</marquee>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<!------------------Notification section End---------------->
+<!------------------images gallery Start---------------->
+
+
+<div class="container">
+  <h2 style=" text-align: center;">Photo Gallery</h2>
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="https://d19gb5k9ejx8w0.cloudfront.net/uploads/2015/09/Crikcet-Class-Cover-Image.jpg" class="img-responsive" alt="" >
+                <div class="col-pic">
+                    <h5>Cricket</h5>
+                </div></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="http://thehpfa.com/wp-content/uploads/2018/07/j.jpg" class="img-responsive" alt="">
+                <div class="col-pic">
+                    <h5>Football</h5>
+                </div></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="http://toothbrushpeople.com/images/socialresponse2.jpg" class="img-responsive" alt="">
+                <div class="col-pic">
+                    <h5>Library</h5>
+                </div></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="http://www.nis.edu.in/img/music-room.jpg" class="img-responsive" alt="">
+                <div class="col-pic">
+                    <h5>Music-Room</h5>
+                </div></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="http://thearyanschool.com/wp-content/uploads/2012/03/9e8914c5-18b5-418c-9223-ffc41c00ee00.jpg" class="img-responsive" alt=" phy">
+                <div class="col-pic">
+                    <h5>Physics</h5>
+                </div></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 padcol ">
+        <div class="col-3">
+            <a href="#"><img src="http://casbmmv.co.in/site_images/2018/chem1.jpg" class="img-responsive" alt="">
+                <div class="col-pic">
+                    <h5>Chemistry</h5>
+                </div></a>
+        </div>
+    </div>
+</div>
+ </div>
+
+
+
+
+<!------------------images gallery End---------------->
+
+
+
+<!------------------footer start---------------->
+
+<div class="container-fluid " style=" background-color: 	#008080; color:white;">
+  <div class="footer" id="footer1" style=" margin: 5%;">
+    <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+      <h1>
+        About
+      </h1>
+      <p style="justify-content: center;">
+
+         Delhi Public School Society, also called DPS is one of the largest chain of private schools established in India and abroad. It controls many schools in India and abroad. There are around 9000 students in Nacharam branch Hyderabad. The Delhi Public School Society is the administrative authority for all the institutions under its banner. Some of the schools are also affiliated to the Central Board of Secondary Education (CBSE) in New Delhi.      </p>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-4">
+     <!--Section: Contact v.2-->
+<section class="mb-4" id="Contact">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+        a matter of hours to help you.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" action="../contactUs/" method="POST">
+                {% csrf_token %}
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email"  name="email" class="form-control" required>
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text"  id="subject" name="subject" class="form-control" required>
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+
+            <div class="text-center text-md-left">
+                <input type="submit" class="btn btn-primary"value="Send" >
+            </div>
+            <div class="status"></div>
+                </form>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>Civil line, Bareilly, India</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+91 8853303195</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>raza01869@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+
+
+
+</section>
+    </div>
+    </div>
+
+   <!------------------footer end---------------->
+
+
+
+  </div>
+</div>
+
+
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

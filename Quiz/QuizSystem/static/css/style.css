@@ -1,0 +1,176 @@
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+body {
+ margin: 0px;
+ padding: 0px;
+  font-family: "Lato";
+}
+.main1{
+  width: 100%;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.example3 .navbar-brand {
+  height: 80px;
+}
+
+.example3 .nav >li >a {
+  color: white !important;
+  padding-top: 30px;
+  padding-bottom: 30px;
+ padding-right: 30px;
+}
+.dropdown-menu li{
+   color: white !important;
+}
+.example3 .navbar-toggle {
+  padding: 10px;
+  
+}
+a{
+  
+}
+
+
+
+
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+	  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+	top: 50%;
+	display: block;
+	position: relative;
+	height: auto;
+	-webkit-transform: translate(0,-50%);
+	        transform: translate(0,-50%);
+	margin-right: 15px;
+  margin-left: 15px;
+}
+.carousel .item {
+  height: 500px;
+  
+}
+.slider{
+  padding: 0px;
+
+   margin-top: -20px;
+
+}
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+    width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+.navbar-nav>li>.dropdown-menu {
+	z-index: 9999;
+}
+li:hover{
+
+}
+.dropdown-menu li a,.navbar-nav  li a{
+  color: black !important;
+  font-size: 20px;
+  padding-left: 5px;
+}
+.navbar .navbar-nav > li.open > a:hover,
+.navbar .navbar-nav > li.open > a:focus {
+  background-color: teal;
+ 
+}
+.pri{
+  width: 200px;
+
+}
+.pri h3{
+  font-size: 18px;
+  float: right;
+  font-family: cursive;
+}
+@media only screen and (max-width: 990px) {
+.pri{
+  margin-left: 13em;
+}
+@media only screen and (max-width: 780px)and (min-width: 670px)  {
+.pri{
+  margin-left: 14em;
+}
+
+.priM{
+  margin-top: 40px;
+}
+.priM h1{
+  justify-content: center;
+  display: inline;
+  font-size: 35px;
+  width: 70%;
+  }
+}
+@media only screen and (max-width: 670px) {
+.pri{
+  margin-left: 8em;
+  margin-bottom: 15px;: 
+}
+.priM{
+  margin: 20px;
+}
+
+
+}
+@media only screen and (max-width:380px)and (min-width: 300px) {
+
+.pri{
+      margin-left: 5%;
+      
+}
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Description</title>
+    <style>	   #italic{font-family:italic;}
+           .row{ padding: 50px;
+
+           }
+           #p{
+           margin:30px;
+           }
+	   </style>
+</head>
+<body style="background-color:#d9d9d9;">
+<div class="container">
+       <div class="row">
+   <div class="col-sm-12">
+      <h2 align="center" id="italic">Test Description </h2>
+
+	  </div>
+           <div id="p">
+<p>1. Essay exams are easier to construct than are objective exams.
+TRUE Essay items are generally easier and less time consuming to construct than
+are most objective test items. Technically correct and content appropriate multiple choice and true-false test items require an extensive amount of time to write
+and revise.</p>
+<p>2. Essay exams require more thorough student preparation and study time than
+objective exams.
+? (QUESTION MARK) According to research findings it is still undetermined whether
+or not essay tests require or facilitate more thorough (or even different) student
+study preparation.</p>
+<p>3. Essay exams require writing skills where objective exams do not.
+TRUE Writing skills do affect a student’s ability to communicate the correct “factual” information through an essay response. Consequently, students with good
+writing skills have an advantage over students who do not.</p>
+<p>
+    4. Essay exams teach a person how to write.
+FALSE Essays do not teach a student how to write but they can emphasize the
+importance of being able to communicate through writing. Constant use of essay
+tests may encourage the knowledgeable but poor writing student to improve his/
+her writing ability in order to improve performance.
+</p>
+
+<div align="center">
+    <form action="../userTest/" method="post">
+        {% csrf_token %}
+        <div align="center">
+            <input type="hidden" name="paperId" value="{{id}}">
+    <input type="submit" class="btn btn-primary btn-lg" value="Start">
+        </div>
+
+
+    </form>
+
+</div>
+</div>
+           </div>
+</div>>
+</body>
+</html>

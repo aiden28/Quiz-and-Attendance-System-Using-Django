@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../College-ERP-master/.idea/College-ERP-master.iml" filepath="$PROJECT_DIR$/../College-ERP-master/.idea/College-ERP-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Project301/.idea/Project301.iml" filepath="$PROJECT_DIR$/../Project301/.idea/Project301.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/QuizSystem.iml" filepath="$PROJECT_DIR$/.idea/QuizSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../aiden/.idea/aiden.iml" filepath="$PROJECT_DIR$/../aiden/.idea/aiden.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../emailer/.idea/emailer.iml" filepath="$PROJECT_DIR$/../emailer/.idea/emailer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../textutils/.idea/textutils.iml" filepath="$PROJECT_DIR$/../textutils/.idea/textutils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../travello/.idea/travello.iml" filepath="$PROJECT_DIR$/../travello/.idea/travello.iml" />
+    </modules>
+  </component>
+</project>

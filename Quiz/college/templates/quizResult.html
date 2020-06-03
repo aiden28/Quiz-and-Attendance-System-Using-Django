@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+		*,h1 {
+  margin: 0;
+  padding: 0;
+}
+
+
+nav{
+	background-color: #00b33c;
+	height: 100px;
+	margin-top: -20px;
+
+}
+.dash{
+	font-size: 40px;
+	padding: 15px;
+	float: left;
+
+}
+.att{
+	width: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+.log a{
+	color: black;
+	font-size: 40px;
+	padding: 15px;
+	float: right;
+	text-decoration: none;
+}
+a:hover{
+	color: white;
+}
+table{
+	margin-top: -50px;
+	text-align: center;
+	border: 1px solid black;
+}
+.dash1{
+	font-size: 35px;
+}
+.nav1{
+	margin-top:  5%;
+	text-align: center;
+	font-size: 30px;
+
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button5 {
+	margin: 21px;
+	padding: 15px;
+	border-radius: 50%;
+width: 100px;}
+@media screen and (min-width: 300px) and (max-width: 540px) {
+
+  @media screen and (min-width: 300px) and (max-width: 400px) {
+  .dash{
+	font-size: 30px;
+
+
+}
+.log a{
+
+	font-size: 30px;
+
+}
+nav{
+	height: 80px;
+}
+input[type="text"]{
+	width: 250px;
+}
+
+}
+
+
+
+
+
+
+.nav1{
+	text-align: center;
+
+}
+
+
+</style>
+</head>
+<body>
+	<nav>
+		<h1 class="dash"> Quiz Result</h1>
+		<h3 class="log"><a href="{% url 'tLogout' %}"> Logout</a></h3>
+	</nav>
+
+	 <div class="nav1">
+		<input type="text" placeholder="Enter test Id" id="aab" class="idinput" required>
+
+		 <button type="button" class="btn btn-info" id="btn" onclick="myFunction()">Go</button>
+	 </div>
+
+
+
+				<form action="../submitAttendance/" method="post">
+				{% csrf_token %}
+					<div id="formdiv">
+
+					</div>
+
+            </form>
+
+
+<script>
+function myFunction() {
+
+
+      var value = document.getElementById("aab").value;
+
+      console.log(111);
+            console.log(value);
+
+
+      $.ajax({
+
+
+      method: "GET",
+        url: "/quizResult1/",
+        data:{
+                 'class': value
+        },
+
+        success: function (data) {
+        document.getElementById("formdiv").innerHTML=data;
+      }
+      });
+
+    }
+
+</script>
+
+
+<script>
+    </script>
+
+
+</body>
+</html>

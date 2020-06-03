@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		nav{
+
+			background-color: #ccffcc;
+			margin:0px;
+			height: 90px;
+		}
+		.Tdash
+		{
+			width: 250px;
+			padding: 10px;
+		}
+		.dropdownAtt{
+			margin: 20px;
+			padding: 15px;
+			text-align: center;
+		}
+
+
+		.Tlogout{
+			font-size: 4vh;
+			text-align: right;
+			text-decoration: none;
+			margin-right: 20px;
+			float: right;
+			margin-top: -70px;
+		}
+		a:hover{
+			color: blue;
+			text-decoration: none;
+		}
+
+		 @media screen and (min-width: 300px)and (max-width: 440px) {
+
+			.Tlogout{
+				font-size: 25px;
+				margin-top: -60px;
+			}
+			.Tdash{
+
+				font-size: 35px;
+			}
+			nav{
+			height: 70px;
+		    }
+		 }
+
+
+
+</style>
+
+</head>
+<body>
+	<nav>
+		<h1 class="Tdash text-left">Attendance</h1>
+		<a href="{% url 'stdLogout' %}" class="Tlogout text-primary">Logout</a>
+	</nav>
+<div class="container">
+
+		  <div class="row">
+
+
+	  <div class="col col-sm"></div>
+    <div class="col col-sm">
+          <input type="text" id="bbb" required class="form-control" name="rollno" placeholder="Enter rollno">
+
+    </div>
+	  	  <div class="col col-sm"></div>
+
+    <div class="col col-sm">
+		 <button type="button" class="btn btn-info btn-sm" id="btn" onclick="myFunction()">View Individual Atendance</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+					<div id="formdiv1">
+
+					</div>
+
+
+
+
+<script>
+function myFunction() {
+
+
+      var value = document.getElementById("bbb").value;
+
+      console.log(111);
+            console.log(value);
+
+
+      $.ajax({
+
+
+      method: "GET",
+        url: "/stdAttend/",
+        data:{
+                 'rollno': value
+        },
+
+        success: function (data) {
+        document.getElementById("formdiv1").innerHTML=data;
+      }
+      });
+
+    }
+
+</script>
+</body>
+</html>

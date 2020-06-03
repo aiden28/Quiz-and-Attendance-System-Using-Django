@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Result</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+
+		body{
+  padding-top: 25px;
+
+}
+
+.box {
+  width: 800px;
+  height: 400px;
+  margin: 50px auto;
+  border: 2px solid black;
+}
+
+.box .inner {
+  height: 100%;
+  padding: 0 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.title,
+.text{
+  display: flex;
+  justify-content: center;
+}
+
+.title span{
+  background: #FFFFFF;
+  font-size: 3em;
+  margin-top: -0.72em;
+}
+
+.text span{
+  background: #FFFFFF;
+  font-size: 1.8em;
+  margin-bottom: -0.6em;
+}
+table {
+	text-align: center;
+}
+.outer {
+    height: 100vh; /*for demo only*/
+
+    overflow: auto;
+}
+.inner {
+    width: 80%;
+
+    margin: auto;
+    /* 100%-80%/2 */
+}
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
+ .box {
+     width: 500px;
+     height: 500px;
+     margin: 50px auto;
+   }
+   .text{
+ font-size: 11px;
+}
+}
+@media only screen and (max-width: 599px) and (min-width: 400px) {
+ .box {
+     width: 350px;
+     height: 450px;
+     margin: 50px auto;
+   }
+   .title{
+ font-size: 15px;
+}
+.text{
+ font-size: 1.1vh;
+}
+}
+@media only screen and (max-width: 399px) and (min-width: 350px) {
+ .box {
+     width: 340px;
+     height: 450px;
+     margin: 50px auto;
+   }
+   .title{
+ font-size: 15px;
+}
+.text{
+ font-size: 1.1vh;
+}
+}
+
+	</style>
+</head>
+<body>
+	<div class="container outer">
+  	<section class="box inner1">
+		<div class="inner">
+			<div class="title">
+				<span style=" border-radius:25px 25px 0px 0px; ">Result Card</span>
+			</div>
+			  <table class="table table-bordered" style="background-color: #80ffbf;">
+    <thead>
+      <tr>
+        <th>Attempted Question</th>
+        <td>{{a}}</td>
+      </tr>
+    </thead>
+    <tbody >
+      <tr>
+        <th>Not Attempt</th>
+        <td>{{na}}</td>
+      </tr>
+        <tr>
+        <th>Result</th>
+        <td> {{r}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+    <div class="text">
+			<span >Thank you for participating in the Quiz</span>
+
+			</div>
+		</div>
+	</section>
+
+        <div align="center">
+            <a class="btn btn-primary" href="http://127.0.0.1:8000/home/" role="button">Home Page</a>
+        </div>
+</div>
+</body>
+</html>

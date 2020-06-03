@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ManageTest</title>
+  </head>
+  <body >
+  <div class="continer">
+      <div class="row justify-content-center">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12" align="center">
+      <div style="margin:50px;">
+          <label for="subject" >Select Subject</label>
+        <select name="subject"  id="aaa">
+            <option value="select subject">Select Subject</option>
+            {% for i in subject %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+</div>
+      <form method="POST" action="../doCreateTestPaper/">
+    {% csrf_token %}
+    <div id="formdiv">
+
+    </div>
+
+</form>
+<div id="errmsg"></div>
+
+  </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script>
+    $("#aaa").change(function () {
+      var value = $(this).val();
+      console.log(value);
+
+      $.ajax({
+
+      method: "GET",
+        url: "/addQuestion/",
+        data:{
+                 'subject': value
+        },
+
+        success: function (data) {
+        document.getElementById("formdiv").innerHTML=data;
+      }});
+
+    });
+    </script>
+<script>
+function validateForm()
+{
+    var flag=true;
+    var c=0;
+    var chk=document.getElementsByClassName("checkbox");
+    for(i=0;i<chk.length;i++)
+        if(chk[i].checked)
+            c++;
+    if(c==0)
+        flag=false;
+    if(flag==false)
+        document.getElementById("errmsg").style.color="red";
+        document.getElementById("errmsg").innerHTML="* Choose atleast one question!"
+    return flag
+
+
+
+}
+
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

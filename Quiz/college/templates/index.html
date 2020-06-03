@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Registration</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' %}" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body style="background-color:#d9d9d9;">
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Student Registration Form</h2>
+                    <form method="POST" action="../registration/">
+                        {% csrf_token %}
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">name</label>
+                                    <input required class="input--style-4" type="text" name="name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">fatherName</label>
+                                    <input required class="input--style-4" type="text" name="father_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">mother name</label>
+                                    <input required class="input--style-4" type="text" name="motherName">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">address</label>
+                                    <input required class="input--style-4" type="text" name="address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="Class" required>
+                                                <option disabled="disabled" selected="selected">Class</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="11">11</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Section</label>
+                                    <input required class="input--style-4" type="text" name="section">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="prevClass" required>
+                                                <option disabled="disabled" selected="selected">Previous Class</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-2">
+                                <div class="input-group">
+
+                                    <label class="label">previous class marks(%)</label>
+                                    <input required class="input--style-4" min="1" max="100" type="number" name="prevClassMark">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">previous class result</label>
+                                    <input required type="file" name="prevResult" accept="image/*">
+                                </div>
+                            </div>
+
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input required type="radio" checked="checked" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Image</label>
+                                    <input required type="file" name="image" accept="image/*">
+
+                                </div>
+                            </div>
+                            <div class="col-2">
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="stream">
+                                    <option disabled="disabled" selected="selected">Stream</option>
+                                    {% for i in obj %}
+                                    <option value="{{i.name}}">{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Birthday</label>
+                                    <div class="input-group-icon">
+                                        <input required class="input--style-4 js-datepicker" type="text" name="dob">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="department" required>
+                                                <option disabled="disabled" selected="selected">Department</option>
+                                                <option value="Junior">Junior</option>
+                                                <option value="HighSchool">HighSchool</option>
+                                                <option value="InterMediate">InterMediate</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-space">
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">RollNo</label>
+                                    <input required class="input--style-4" type="text" name="rollno">
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input required class="input--style-4" type="password" name="password">
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

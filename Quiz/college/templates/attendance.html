@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+	 <section class="att">
+	 	<div class="idTest" style="float: left; font-size: 25px;">Name: {{name}}</div>
+	 	<div class="mm" style="float: right; font-size: 25px;">Attendance(%): {{p}}</div>
+		<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">S.NO.</th>
+      <th scope="col" style="text-align: center;"> Status</th>
+      <th scope="col"  style="text-align: center;"> Date</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i,j,k in data %}
+    <tr>
+      <td scope="row">{{i}}</td>
+      <td>{{j}}</td>
+      <td>{{k}}</td>
+
+    </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table>
+	</section>
+    </div>
+</body>
+</html>

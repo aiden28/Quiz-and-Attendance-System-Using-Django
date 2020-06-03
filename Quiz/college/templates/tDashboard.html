@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+
+		}
+		nav{
+
+			background-color: #ccffcc;
+			margin:0px;
+			height: 90px;
+		}
+		.Tdash
+		{
+			width: 250px;
+			padding: 10px;
+		}
+		.img1{
+			text-align: center;
+			padding: 20px;
+		}
+		h3{
+			bottom: 0;
+		}
+		.Tlogout{
+			font-size: 4vh;
+			text-align: right;
+			text-decoration: none;
+			margin-right: 20px;
+			float: right;
+			margin-top: -70px;
+		}
+		a:hover{
+			color: blue;
+			text-decoration: none;
+		}
+		@media screen and (min-width: 750px) {
+			.main2{
+				display: none;
+			}
+		 }
+		 @media screen and (min-width: 300px)and (max-width: 750px) {
+			.main1{
+				display: none;
+			}
+		 }
+		 @media screen and (min-width: 300px)and (max-width: 440px) {
+		 	.img1{
+		 		margin: 3% 10% 3% 20%;
+		 	}
+			.Tlogout{
+				font-size: 25px;
+				margin-top: -60px;
+			}
+			.Tdash{
+
+				font-size: 35px;
+			}
+			nav{
+			height: 70px;
+		    }
+		 }
+
+
+
+</style>
+
+</head>
+<body>
+	<nav>
+		<h1 class="Tdash text-left">Dashboard</h1>
+		<a href="{% url 'tLogout' %}" class="Tlogout text-primary">Logout</a>
+	</nav>
+
+	<section class="main1">
+		<div class="container">
+           <div class="row">
+               <div class="col-sm-12 col-lg-3 col-md-6 img1">
+                <a href="{% url 'selectClass' %}"> <img src="{% static 'images/attendance.png' %}" alt="">
+                	<h3>Attendance</h3></a>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 img1">
+                 <a href="{% url 'quiz' %}"> <img src="{% static 'images/quiz1.jpg' %}" alt="">
+                	<h3>Quiz</h3></a>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 img1">
+                <a href="{% url 'quizResult' %}"> <img src="{% static 'images/result2.jpg' %}" alt="" style="width: inherit;">
+                	<h3>Result</h3></a>
+               </div>
+               <div class="col-sm-12 col-lg-3 col-md-6 img1">
+                <a href="{% url 'report' %}"> <img src="{% static 'images/report2.png' %}" alt="" >
+                	<h3>Report</h3></a>
+               </div>
+            </div>
+         </div>
+	</section>
+	<section  class="main2">
+		<div class="container">
+           <div class="row">
+               <div class="col-sm-6  img1">
+                <a href="{% url 'selectClass' %}"> <img src="{% static 'images/attendance - Copy.png' %}" alt="">
+                	<h3>Attendance</h3></a>
+               </div>
+               <div class="col-sm-6  img1">
+                 <a href="{% url 'quiz' %}"> <img src="{% static 'images/quiz1 - Copy.jpg' %}" alt="quiz">
+                	<h3>Quiz</h3></a>
+               </div>
+               <div class="col-sm-6 img1">
+                <a href="{% url 'quizResult' %}"> <img src="{% static 'images/result1 - Copy.jpg' %}" alt="" style="width: inherit;">
+                	<h3>Result</h3></a>
+               </div>
+               <div class="col-sm-6  img1">
+                <a href="{% url 'report' %}"> <img src="{% static 'images/report2 - Copy.png' %}" alt="" >
+                	<h3>Report</h3></a>
+               </div>
+            </div>
+         </div>
+	</section>
+</body>
+</html>
