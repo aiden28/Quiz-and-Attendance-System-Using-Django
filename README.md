@@ -11,13 +11,19 @@ Admin Module:-
 Dashboard: In this section, admin can view and manage all brief information total reg students, total reg staff, total class listed.
 
 Teacher Module:-
--Teacher can mark the attendance of class.
+
+-Teacher can mark the attendance of class
+
 -Generate reports
+
 -Manage own profile
+
 -change Password
+
 -Create Quiz Paper.
 
 Student  Module:-
+
 -Dashboard 
 -Able to attend Quiz
 -monitor own attendance and quiz result 
