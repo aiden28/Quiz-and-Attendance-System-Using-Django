@@ -8,6 +8,7 @@ teacher
 student
 
 Admin Module:-
+
 Dashboard: In this section, admin can view and manage all brief information total reg students, total reg staff, total class listed.
 
 Teacher Module:-
@@ -25,13 +26,19 @@ Teacher Module:-
 Student  Module:-
 
 -Dashboard 
+
 -Able to attend Quiz
+
 -monitor own attendance and quiz result 
+
 -update own profile
+
 -change password
 
 Technology used:-
+
 -Front end: HTML, CSS, JavaScript, Bootstrap
+
 -Back end: Python Django
 
 
