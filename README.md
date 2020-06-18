@@ -44,7 +44,10 @@ Technology used:-
 
 Password:
 Django administration:-   user-> hasan, pass-> qwert098
+
 student:-    user-> 20JN01, password-> hasan
+
 teacher:-    user-> hasan, password-> hasan
+
 quiz paper:- id-> 27, password-> hasan
 
